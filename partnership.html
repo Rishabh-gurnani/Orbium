@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partnership - Orbium</title>
+    <link rel="icon" href="{{ url_for('static', filename='image.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">Orbium</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('onedown') }}">One Down</a></li>
+                <li><a href="{{ url_for('oneup') }}">One Up</a></li>
+                <li><a href="{{ url_for('partnership') }}">Partnership</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="partnership-section">
+        <div class="message">
+            <h2>Interested in our Project? Join Now!</h2>
+            <p>At Orbium, we consider partnerships as an intrinsic aspect of our company. We partner with other companies and individuals to fulfill our client's needs to the maximum extent, and to find more efficient solutions to the aggravating problem of space debris accumulation. Together, we aim at opening up opportunities for space exploration, and ensure space sustainability.</p>
+        </div>
+        <div class="hero"></div>
+
+        <form class="partnership-form" action="/partnership" method="POST" enctype="multipart/form-data" onsubmit="showAlert()">
+            <label for="company-name">Company Name</label>
+            <input type="text" id="company-name" name="company_name" required>
+
+            <label for="email">Email</label>
+            <input type="text" id="email" name="company_email" required>
+
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" required>
+
+            <label for="contribution">How can you contribute to our mission?</label>
+            <textarea id="contribution" name="contribution" required></textarea>
+
+            <label for="expectation">What do you expect to gain from this partnership?</label>
+            <textarea id="expectation" name="expectation" required></textarea>
+
+            <label for="funding-costs">Mention your annual funding costs</label>
+            <input type="number" id="funding-costs" name="funding_costs" required>
+
+            <label for="prototype">Kindly attach your prototype</label>
+            <div class="file-upload">
+                <input type="file" id="prototype" name="prototype" accept="application/pdf,image/*" required class="file-input" style="display: none;">
+                <span id="file-name" class="file-name">Choose File</span>
+            </div>
+            <button type="button" id="remove-file">Remove Selected File</button>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Orbium. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script>
+        const fileInput = document.getElementById('prototype');
+        const fileNameDisplay = document.getElementById('file-name');
+        const removeFileButton = document.getElementById('remove-file');
+        fileNameDisplay.addEventListener('click', function() {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            if (file) {
+                fileNameDisplay.textContent = file.name;
+                fileNameDisplay.classList.add('file-selected');
+            }
+        });
+
+        removeFileButton.addEventListener('click', function() {
+            fileInput.value = '';
+            fileNameDisplay.textContent = 'Choose File';
+            fileNameDisplay.classList.remove('file-selected');
+        });
+
+        function showAlert() {
+            alert("Form has been submitted successfully!");
+        }
+    </script>
+</body>
+</html>

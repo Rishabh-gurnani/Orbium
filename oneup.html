@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Up - Orbium</title>
+    <link rel="icon" href="{{ url_for('static', filename='image.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="hero"></div>
+
+    <header>
+        <div class="logo">Orbium</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('onedown') }}">One Down</a></li>
+                <li><a href="{{ url_for('oneup') }}">One Up</a></li>
+                <li><a href="{{ url_for('partnership') }}">Partnership</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="animated-cards" class="animated-cards">
+        <h2>One Up</h2>
+        <div class="animated-card-container">
+            <div class="animated-card">
+                <h3>Advanced Propulsion Systems</h3>
+                <p>Develop a mission to test next-generation propulsion technologies, such as ion drives or nuclear thermal engines, aimed at reducing travel time to distant planets. This mission will evaluate the efficiency and performance of these advanced systems in space, focusing on their ability to provide higher thrust and fuel efficiency. By conducting in-space demonstrations, the mission will gather crucial data to inform future spacecraft designs, ultimately enhancing our capability for faster crewed and uncrewed missions to destinations like Mars and beyond.</p>
+            </div>
+            <div class="animated-card">
+                <h3>Deorbiting Small Satellites</h3>
+                <p>Develop and test technology for small satellites that can actively deorbit themselves at the end of their operational life. This initiative will explore solutions like drag sails and propulsion systems to safely lower orbits and facilitate re-entry. By integrating these technologies, satellites can minimize space debris and ensure responsible end-of-life management. In-orbit demonstrations will assess the effectiveness of these methods, promoting sustainable practices in satellite design and contributing to a cleaner orbital environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Orbium. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

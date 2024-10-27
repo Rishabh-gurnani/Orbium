@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Orbium</title>
+    <link rel="icon" href="{{ url_for('static', filename='image.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="hero"></div>
+
+    <header>
+        <div class="logo">Orbium</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('onedown') }}">One Down</a></li>
+                <li><a href="{{ url_for('oneup') }}">One Up</a></li>
+                <li><a href="{{ url_for('partnership') }}">Partnership</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <p>Contact Team Orbium</p>
+            </div>
+            <div class="flip-card-back">
+                <p>
+                    Primary Email: orbium.support@gmail.com<br><br>
+                    Secondary Email: orbium.tech@gmail.com<br><br>
+                    Partnership Related: orbium.partnerships@gmail.com
+                </p>
+            </div>            
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Orbium. All Rights Reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

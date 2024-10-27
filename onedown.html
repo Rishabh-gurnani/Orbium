@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Down - Orbium</title>
+    <link rel="icon" href="{{ url_for('static', filename='image.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="hero"></div>
+
+    <header>
+        <div class="logo">Orbium</div>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('onedown') }}">One Down</a></li>
+                <li><a href="{{ url_for('oneup') }}">One Up</a></li>
+                <li><a href="{{ url_for('partnership') }}">Partnership</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="missions" class="missions">
+        <h2>One Down</h2>
+        <div class="mission-cards">
+            <div class="card">
+                <h3>Debris Tracking & Mapping</h3>
+                <p>Develop a satellite system to continuously monitor and map space debris in Earth's orbit. Equipped with advanced sensors, this system will provide real-time data on the location, size, and trajectory of debris, helping satellite operators avoid collisions. The insights gained can also inform future satellite designs, promoting sustainable practices and contributing to global efforts to mitigate space debris accumulation.</p>
+            </div>
+            <div class="card">
+                <h3>Active Debris Removal</h3>
+                <p>Design a spacecraft equipped with technologies like nets, harpoons, or lasers to capture and deorbit larger pieces of space debris. This mission will focus on removing high-risk objects identified through tracking systems, prioritizing those that threaten operational satellites. The spacecraft will use precise capture methods to secure the debris and then propel it to safely re-enter Earth's atmosphere, where it will burn up. This aims to reduce collision risks and enhance the sustainability of space operations while providing valuable insights for future debris removal efforts.</p>
+            </div>
+            <div class="card">
+                <h3>Debris Mitigation Guidelines</h3>
+                <p>Create an international framework or guidelines for space agencies and private companies focused on responsible satellite design and launch practices. These guidelines will emphasize the inclusion of end-of-life plans, such as deorbiting strategies and safe management of defunct components. By promoting collaboration and best practices, the framework aims to minimize the creation of new space debris and establish standards that ensure accountability in space activities. This will contribute to sustainable environment, helping to protect assets for future generations.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Orbium. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
